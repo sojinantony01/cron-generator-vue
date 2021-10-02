@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Cron from './lib/cron.vue'
+import Cron from './lib'
 export default {
   name: 'App',
   components: {

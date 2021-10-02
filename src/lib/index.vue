@@ -29,7 +29,10 @@ import { metadata, loadHeaders, translateFn, HEADER_VALUES } from './meta';
 import Minutes from './cron-tab/minutes.vue';
 import Hourly from './cron-tab/hourly.vue';
 import Daily from './cron-tab/daily.vue';
-import Weekly from './cron-tab/weekly.vue'
+import Weekly from './cron-tab/weekly.vue';
+import { HEADER } from './meta';
+
+export { HEADER };
 export default {
     components: {
         Minutes,
