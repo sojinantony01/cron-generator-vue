@@ -2,21 +2,20 @@
     <div className="tab-pane" >
         <div className="well well-small">
             <input type="radio" @change="everyDay" :checked="value[3].indexOf('/') != -1" />
-            <span>{{translate('Every')}}</span>
+            <span>{{$parent.translate('Every')}}</span>
             <input :disabled="value[3].indexOf('/') == -1"  type="number" @input="onDayChange" :value="this.value[3].split('/')[1] ? this.value[3].split('/')[1] :''" :max="31" maxLength="2" />
-            <span>{{translate('days(s)')}}</span>
+            <span>{{$parent.translate('days(s)')}}</span>
         </div>
         <div className="well well-small">
             <input @change="weekDay" type="radio"  name="DailyRadio" :checked="value[3].indexOf('/') == -1"/>
-            <span>{{translate('Every week day')}}</span>
+            <span>{{$parent.translate('Every week day')}}</span>
         </div>
-        <span>{{translate('Start time')}}</span>
+        <span>{{$parent.translate('Start time')}}</span>
             <Hour :disabled="value[2].indexOf('/') != -1"  @change="onAtHourChange" :value="value[2]" />
             <Minutes :disabled="value[2].indexOf('/') != -1"  @change="onAtMinuteChange" :value="value[1]" />
     </div>
 </template>
 <script>
-import { translateFn } from '../meta'
 import Minutes from '../select/minutes.vue';
 import Hour from '../select/hour.vue';
 export default {
@@ -26,9 +25,6 @@ export default {
         Minutes
     },
     methods: {
-        translate(key) {
-            return translateFn(key)
-        },
         everyDay() {
             let val = ['0',this.value[1],this.value[2],'1/1','*','?','*'];
             this.$emit("change-val", val);
@@ -48,12 +44,12 @@ export default {
             return this.value[index] === '*' ? '0' : this.value[index];
         },
         onAtHourChange(e) {
-            let val = ['0',this.value[1],'*','1/1','*','?','*']
+            let val = this.value;
             val[2] = `${e.target.value}`;
             this.$emit("change-val", val);
         },
         onAtMinuteChange(e) {
-            let val = ['0','*', this.value[2],'1/1','*','?','*']
+            let val = this.value;
             val[1] = `${e.target.value}`;
             this.$emit("change-val", val);
         }

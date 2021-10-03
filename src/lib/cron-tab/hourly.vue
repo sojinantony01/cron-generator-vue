@@ -3,14 +3,14 @@
         <div className="tab-pane active">
             <div className="well well-small">
                 <input type="radio" @change="everyHour" :checked="value[2].indexOf('/') != -1" />
-                <span>{{translate('Every')}}</span>
+                <span>{{$parent.translate('Every')}}</span>
                 <input :disabled="value[2].indexOf('/') == -1"  type="number" @input="onHourChange" :value="this.value[2].split('/')[1] ? this.value[2].split('/')[1] : ''" :max="24" maxLength="2" />
-                <span>{{translate('hour(s)')}}</span>
+                <span>{{$parent.translate('hour(s)')}}</span>
             </div>
             <div className="well well-small margin-right-0 margin-left-0">
             <div className="text_align_right w-100">
                 <input type="radio" @change="atHour" :checked="value[2].indexOf('/') == -1"  />
-                <span className="">{{translate('At')}}</span> 
+                <span className="">{{$parent.translate('At')}}</span> 
                 <Hour :disabled="value[2].indexOf('/') != -1"  @change="onAtHourChange" :value="value[2]" />
                 <Minutes :disabled="value[2].indexOf('/') != -1"  @change="onAtMinuteChange" :value="value[1]" />
             </div>
@@ -19,7 +19,6 @@
     </div>
 </template>
 <script>
-import { translateFn } from '../meta'
 import Minutes from '../select/minutes.vue';
 import Hour from '../select/hour.vue';
 export default {
@@ -29,9 +28,6 @@ export default {
         Minutes
     },
     methods: {
-        translate(key) {
-            return translateFn(key)
-        },
         everyHour() {
             let val = ['0','0','0/1','1/1','*','?','*'];
             this.$emit("change-val", val);

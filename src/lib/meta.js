@@ -74,13 +74,13 @@ export const loadHeaders = (options) => {
     return defaultTabs;
 };
 
-export const translateFn = (key) => {
+export const translateFn = (key, translations) => {
     let translatedText = key;
-    // if(this.translateFn) {
-    //     translatedText = this.translateFn(key);
-    //     if(typeof translatedText !== 'string') {
-    //         throw new Error('translateFn expects a string translation');
-    //     }
-    // }
+    if(translations) {
+        translatedText = translations[key];
+        if(typeof translatedText !== 'string') {
+            throw new Error('translateFn expects a string translation');
+        }
+    }
     return translatedText;
 }

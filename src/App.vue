@@ -1,13 +1,29 @@
 <template>
-  <Cron showResultCron="true" showResultText="true"/>
+ <div> <Cron showResultCron="true" :cron="cron" showResultText="true" @cron-change="valChanged"/>
+ </div>
 </template>
 
 <script>
 import Cron from './lib'
+
+
 export default {
   name: 'App',
   components: {
     Cron
+  },
+  data() {
+    return {
+      cron : '0 0 4 ? * MON *',
+    }
+  },
+  methods: {
+    valChanged(val) {
+      this.cron = val
+    }
+  },
+  created() {
+    setTimeout(()=>this.cron = '0 0 0 3 1/1 ? *', 3000)
   }
 }
 </script>
