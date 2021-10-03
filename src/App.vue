@@ -1,6 +1,5 @@
 <template>
- <div> <Cron showResultCron="true" :cron="cron" showResultText="true" @cron-change="valChanged"/>
- </div>
+  <Cron showResultCron="true" :cron="cron" showResultText="true" @cron-change="valChanged"/>
 </template>
 
 <script>
@@ -22,9 +21,6 @@ export default {
       this.cron = val
     }
   },
-  created() {
-    setTimeout(()=>this.cron = '0 0 0 3 1/1 ? *', 3000)
-  }
 }
 </script>
 

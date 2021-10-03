@@ -1,13 +1,41 @@
 {
-  "name": "vue3-cron-generator",
+  "name": "cron-generator-vue",
   "version": "0.1.0",
-  "private": true,
+  "description": "Simple vue component to generate cron expression",
+  "keywords": [
+    "Vue cron generator",
+    "cron builder",
+    "Scheduler expression builder",
+    "cron",
+    "Vue cron",
+    "cron builder",
+    "cron ui",
+    "vue cron ",
+    "vue cron editor",
+    "vue cron creator"
+  ],
+  "author": "Sojin antony",
+  "dependencies": {
+    "cronstrue": "1.92.0"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sojinantony01/cron-generator-vue.git"
+  },
+  "homepage": "https://sojinantony01.github.io/cron-generator-vue",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "vue-build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d dist"
   },
-  "dependencies": {
+  "peerDependencies": {
     "core-js": "^3.6.5",
     "cronstrue": "^1.117.0",
     "vue": "^3.0.0"
@@ -19,7 +47,10 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "core-js": "^3.6.5",
+    "cronstrue": "^1.117.0",
+    "vue": "^3.0.0"
   },
   "eslintConfig": {
     "root": true,

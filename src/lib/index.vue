@@ -133,7 +133,7 @@ export default {
     watch: {
         cron: {
             immediate: true, 
-            handler (val, oldVal) {
+            handler (val) {
                 if(val && (val != this.getCronString(this.value))) {
                     this.setValue(this.cron)
                 }

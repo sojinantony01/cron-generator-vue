@@ -26,34 +26,32 @@ npm install cron-generator-vue
 
 
 ```
-import React, { Component } from 'react'
-import Cron from 'react-cron-generator'
-import 'react-cron-generator/dist/cron-builder.css'
+<template>
+  <Cron showResultCron="true" :cron="cron" showResultText="true" @cron-change="valChanged"/>
+</template>
+
+<script>
+import Cron from 'cron-generator-vue'
 
 
-class App extends Component {
-
-  constructor(props) {
-      super(props);
-      this.state = {
-       
-      };
-  }
-
-  render() {
-    return (<div>
-      <Cron
-        onChange={(e)=> {this.setState({value:e});}}
-        value={this.state.value}
-        showResultText={true}
-        showResultCron={true}
-        />
-                            
-    </div>)
-  }
+export default {
+  name: 'App',
+  components: {
+    Cron
+  },
+  data() {
+    return {
+      cron : '0 0 4 ? * MON *',
+    }
+  },
+  methods: {
+    valChanged(val) {
+      this.cron = val
+    }
+  },
 }
+</script>
 
-export default App;
 
 ```
 ## props
