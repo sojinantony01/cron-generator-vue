@@ -73,7 +73,7 @@ export default {
 | options | Options for Cron component, *Must pass a valid cron value for available headers | All available headers | No
 
 
-**translattion**
+**translation**
 
 Expects a method. Use this prop for localization support. `vue-cron-builder` will use this values for every key. List of keys are available [here](https://github.com/sojinantony01/vue-cron-builder/tree/master/src/lib/localization/translation.json)
 
