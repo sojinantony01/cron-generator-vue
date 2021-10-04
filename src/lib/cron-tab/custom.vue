@@ -7,7 +7,6 @@
 
 export default {
     props:['value'],
-
     methods: {
         onChange(e) {
             let val = e.target.value.replace(/,/g, '!').split(" ");
