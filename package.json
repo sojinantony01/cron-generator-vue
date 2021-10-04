@@ -1,6 +1,6 @@
 {
-  "name": "cron-generator-vue",
-  "version": "0.1.0",
+  "name": "vue-cron-builder",
+  "version": "0.1.2",
   "description": "Simple vue component to generate cron expression",
   "keywords": [
     "Vue cron generator",
@@ -12,28 +12,38 @@
     "cron ui",
     "vue cron ",
     "vue cron editor",
-    "vue cron creator"
+    "vue cron creator",
+    "vue cron builder"
   ],
   "author": "Sojin antony",
   "dependencies": {
     "cronstrue": "1.92.0"
   },
-  "main": "build/index.js",
-  "module": "build/index.js",
+  "main": "dist/vue-cron-builder.umd.js",
+  "module": "dist/vue-cron-builder.esm.js",
+  "unpkg": "dist/vue-cron-builder.min.js",
+  "style":"dist/cron.css",
+  "browser": {
+    "./sfc": "src/lib/cron.vue"
+  },
   "files": [
     "dist",
     "README.md"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sojinantony01/cron-generator-vue.git"
+    "url": "git+https://github.com/sojinantony01/vue-cron-builder.git"
   },
-  "homepage": "https://sojinantony01.github.io/cron-generator-vue",
+  "homepage": "https://sojinantony01.github.io/vue-cron-builder",
   "scripts": {
     "serve": "vue-cli-service serve",
     "vue-build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "build": "rm -rf dist/* &  npm run build:umd & npm run build:es & npm run build:unpkg & cp src/lib/cron.css dist/ & cp src/lib/header.js dist/ ",
+    "build:umd": "rollup --config rollup.config.js --format umd --file dist/vue-cron-builder.umd.js",
+    "build:es": "rollup --config rollup.config.js --format es --file dist/vue-cron-builder.esm.js",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/vue-cron-builder.min.js"
   },
   "peerDependencies": {
     "core-js": "^3.6.5",
@@ -43,14 +53,22 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-service": "^4.5.13",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
     "core-js": "^3.6.5",
     "cronstrue": "^1.117.0",
-    "vue": "^3.0.0"
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "vue": "^3.0.0",
+    "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,
@@ -70,5 +88,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/sojinantony01/vue-cron-builder/issues"
+  },
+  "license": "ISC"
 }

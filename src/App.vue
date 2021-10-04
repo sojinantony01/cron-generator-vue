@@ -1,11 +1,10 @@
 <template>
-  <Cron showResultCron="true" :cron="cron" showResultText="true" @cron-change="valChanged"/>
+  <Cron  showResultCron="true" :cron="cron" showResultText="true" @cron-change="valChanged"/>
 </template>
 
 <script>
-import Cron from './lib'
-
-
+import Cron from './lib/cron.vue'
+import './lib/cron.css'
 export default {
   name: 'App',
   components: {

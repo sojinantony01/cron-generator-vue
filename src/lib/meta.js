@@ -1,18 +1,3 @@
-// import Minutes from '../cron-tab/minutes';
-// import Daily from '../cron-tab/daily';
-// import Hourly from '../cron-tab/hourly';
-// import Weekly from '../cron-tab/weekly';
-// import Monthly from '../cron-tab/monthly';
-// import Custom from '../cron-tab/custom';
-
-// export const HEADER = {
-//     MINUTES: 'MINUTES',
-//     HOURLY: 'HOURLY',
-//     DAILY: 'DAILY',
-//     WEEKLY: 'WEEKLY',
-//     MONTHLY: 'MONTHLY',
-//     CUSTOM: 'CUSTOM'
-// };
 
 export const HEADER_VALUES = {
     MINUTES: 'Minutes',

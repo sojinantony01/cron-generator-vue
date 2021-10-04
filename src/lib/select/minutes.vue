@@ -1,6 +1,6 @@
 <template>
     <select :disabled="disabled" className="hours" @change="$emit('change', $event)" :value="value">
-            <option v-for="(n,index) in 60" :key="index">
+            <option v-for="(n,index) in 60" :key="index + n">
                 {{index}}
             </option>
         </select>

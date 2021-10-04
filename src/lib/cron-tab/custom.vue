@@ -4,14 +4,10 @@
     </div>
 </template>
 <script>
-import Minutes from '../select/minutes.vue';
-import Hour from '../select/hour.vue';
+
 export default {
     props:['value'],
-    components: {
-        Hour,
-        Minutes
-    },
+
     methods: {
         onChange(e) {
             let val = e.target.value.replace(/,/g, '!').split(" ");
