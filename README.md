@@ -18,7 +18,7 @@ npm install vue-cron-builder
 
 ```
 ## demo
-[Live demo](https://sojinantony01.github.io/vue-cron-builder/)
+[Live demo](https://sojinantony01.github.io/cron-generator-vue/)
 
 ![alt text](https://raw.githubusercontent.com/sojinantony01/react-cron-generator/master/public/images/Screenshot%20from%202019-06-08%2000-31-31.png)
 

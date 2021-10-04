@@ -34,7 +34,7 @@
     "type": "git",
     "url": "git+https://github.com/sojinantony01/vue-cron-builder.git"
   },
-  "homepage": "https://sojinantony01.github.io/vue-cron-builder",
+  "homepage": "https://sojinantony01.github.io/cron-generator-vue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "vue-build": "vue-cli-service build",
