@@ -1,6 +1,6 @@
 {
   "name": "vue-cron-builder",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Simple vue component to generate cron expression",
   "keywords": [
     "Vue cron generator",
@@ -32,7 +32,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sojinantony01/vue-cron-builder.git"
+    "url": "git+https://github.com/sojinantony01/cron-generator-vue.git"
   },
   "homepage": "https://sojinantony01.github.io/cron-generator-vue",
   "scripts": {
