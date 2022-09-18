@@ -1,6 +1,6 @@
 {
   "name": "vue-cron-builder",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Simple vue component to generate cron expression",
   "keywords": [
     "Vue cron generator",
@@ -90,7 +90,7 @@
     "not dead"
   ],
   "bugs": {
-    "url": "https://github.com/sojinantony01/vue-cron-builder/issues"
+    "url": "https://github.com/sojinantony01/cron-generator-vue/issues"
   },
   "license": "ISC"
 }
